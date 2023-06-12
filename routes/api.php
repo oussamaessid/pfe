@@ -17,6 +17,9 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\EvenementImagesController;
+use App\Http\Controllers\PlatImagesController;
+use App\Http\Controllers\PlanImagesController;
+use App\Http\Controllers\HotelImagesController;
 use App\Models\Evenement;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -35,6 +38,7 @@ Route::get('/hotelsTozeur', [HotelController::class, 'gethotelsTO']);
 Route::get('/hotelsGammarth', [HotelController::class, 'gethotelsG']);
 Route::get('/search/{nom}', [HotelController::class, 'searchByName']);
 Route::get('/pays', [PaysController::class, 'index']);
+Route::get('/hotel/{hotel_id}', [HotelImagesController::class, 'gethotelbyidimages']);
 
 
 Route::get('/users', [PersonneController::class, 'index']);
@@ -75,10 +79,12 @@ Route::get('/top-hotels', [HotelController::class, 'topHotels']);
 
 Route::get('/menu/{id_service}', [MenuController::class, 'getmenubyidservice']);
 Route::get('/plats/{id}', [PlatsController::class, 'get_plat_by_idmenu']);
+Route::get('/plat/{plat_id}', [PlatImagesController::class, 'getplatbyidimages']);
 
 
 
 Route::get('/plans/{id_service}', [PlansController::class, 'getplansbyidservice']);
+Route::get('/plan/{plat_id}', [PlanImagesController::class, 'getplanbyidimages']);
 
 
 

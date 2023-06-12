@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\HotelImage;
 
 class Hotel extends Model
 {
@@ -18,7 +19,10 @@ class Hotel extends Model
     }
 
 
-
+    public function hotelImages()
+    {
+        return $this->hasMany(HotelImage::class);
+    }
     // guarded
     protected $fillable = [
         'nom',

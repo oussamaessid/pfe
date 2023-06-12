@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\PlatImage;
 
 class Plat extends Model
 {
@@ -11,4 +12,9 @@ class Plat extends Model
     protected $table = 'plats';
     public $timestamps = false;
     protected $fillable = [];
+
+    public function platImages()
+    {
+        return $this->hasMany(platImage::class);
+    }
 }

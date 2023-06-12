@@ -12,7 +12,7 @@ class PlatsController extends Controller
     public function get_plat_by_idmenu($id_menu)
     {
 
-        $plats = Plat::where('id_menu', $id_menu)->get()->groupBy('categorie');
+        $plats = Plat::where('id_menu', $id_menu)->get();
         return response()->json([
             'status' => 200,
             'plat' => $plats,
